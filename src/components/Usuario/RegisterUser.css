@@ -1,0 +1,12 @@
+/* RegisterUser.css */
+.tamaño-imagen {
+    max-width: 500%; /* Ajusta el ancho máximo según tu diseño */
+    height: 500px; /* La altura se ajustará automáticamente */
+    margin-top: 100px; /* Ejemplo de margen superior para separar del contenido */
+  }
+
+/* Establece un fondo de color para toda la pantalla */
+body {
+    background-color: #c8f0f3; /* Elige el color de fondo que deseas */
+  }
+  

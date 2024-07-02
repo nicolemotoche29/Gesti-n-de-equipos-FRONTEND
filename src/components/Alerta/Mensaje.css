@@ -1,0 +1,35 @@
+/* Mensaje.css */
+.mensaje {
+    padding: 0.3rem; /* Correspondiente a p-6 */
+    border-left-width: 4px; /* Correspondiente a border-l-4 */
+    border-radius: 1rem; /* Correspondiente a rounded-r-xl */
+    display: flex;
+    margin-top: 0.5rem; /* Correspondiente a mt-2 */
+}
+
+.mensaje.error {
+    background-color: #FEE2E2; /* Correspondiente a bg-red-50 */
+    border-color: #EF4444; /* Correspondiente a border-red-500 */
+    color: #b91c1c; /* Correspondiente a text-red-500 */
+}
+
+.mensaje.success {
+    background-color: #ECFDF5; /* Correspondiente a bg-green-50 */
+    border-color: #10B981; /* Correspondiente a border-green-500 */
+    color: #10B981; /* Correspondiente a text-green-500 */
+}
+
+.mensaje .icon {
+    width: 1.45rem; /* Correspondiente a w-5 */
+    height: 1.25rem; /* Correspondiente a h-5 */
+    stroke: #f87171;
+}
+
+.mensaje .text {
+    margin-left: 0.75rem; /* Correspondiente a ml-3 */
+}
+
+.mensaje .text-content {
+    font-size: 0.875rem; /* Correspondiente a text-sm */
+}
+
