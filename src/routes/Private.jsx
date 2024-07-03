@@ -5,5 +5,5 @@ export const Private = ({ children }) =>
 {
     const autenticado = localStorage.getItem('token')
     
-    return (autenticado) ? children : <Navigate to='/login' />
+    return (autenticado) ? children : <Navigate to='/' />
 }

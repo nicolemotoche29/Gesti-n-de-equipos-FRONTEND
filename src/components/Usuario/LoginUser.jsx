@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import login from '../assets/images/login.png';
-import profile from '../assets/images/profile.png';
-import Mensaje from "../components/Alerta/Mensaje";
-import '../App.css';
+import login from "../../assets/images/login.png";
+import profile from '../../assets/images/profile.png';
+import Mensaje from "../Alerta/Mensaje";
+import '../../App.css';
 
-const Login = () => {
+const LoginUser = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [mensaje, setMensaje] = useState(null);
     const [form, setForm] = useState({
@@ -128,12 +128,9 @@ const Login = () => {
                                 </p>
                             </div>
                             
-                            <Link to="/login-user" className="btnform mt-2">
-                                Iniciar sesión como Usuario
-                            </Link>
-                            <Link to="/registrar-Admin" className="btnform mt-2">
-                                Registrarse como Administrador
-                            </Link>
+                            <Link to="/" className="btnform mt-2">
+                                Iniciar sesion como Administrador
+                            </Link>   
                         </div>
                     </div>
                 </div>
@@ -145,4 +142,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default LoginUser;
