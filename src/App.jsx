@@ -1,31 +1,39 @@
 import "./App.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Login from "../src/pages/Login";
-import RegisterUser from "../src/components/Usuario/RegisterUser";
-import RegisterAdmin from "../src/components/Administrador/RegisterAdmin";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Private } from "./routes/Private";
+//
+import Login from "./pages/Login";
+import RegistrarAdmin from "./components/Administrador/RegistrarAdmin";
+import RegistrarUsuario from "./components/Usuario/RegistrarUsuario";
+import Recuperar from "./pages/Recuperar"
+// Administrador
+import NavAdmin from "./components/Administrador/NavAdmin"
 
 function App() {
-  const route = createBrowserRouter([
-    {
-      path: "/",
-      element: <Login />,
-    },
-    {
-      path: "/registerUser",
-      element: <RegisterUser />,
-    },
+  return(
+<Router>
+    <Routes>
+      {/*Publicas*/}
+      <Route path="/" element={<Login/>}/>
+      <Route path="/registrar-Admin" element={< RegistrarAdmin/>}/>
+      <Route path="/registrar-Usuario" element={< RegistrarUsuario/>}/>
+      <Route path="/recuperar/contraseña" element={< Recuperar/>} />
+    </Routes>
 
-    {
-      path: "/registerAdmin",
-      element: <RegisterAdmin />,
-    },
-  ]);
-
-  return (
-    <div className="App">
-      <RouterProvider router={route}></RouterProvider>
-    </div>
-  );
+    <Route
+      path="/administrador/*"
+      element={
+        <Private>
+          <NavAdmin/>
+          <Routes>
+            <Route path="registrar-equipo"/>
+          </Routes>
+        </Private>
+      }
+    />
+  </Router>
+  )
+  
 }
 
 export default App;

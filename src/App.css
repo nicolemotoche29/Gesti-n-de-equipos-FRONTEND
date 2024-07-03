@@ -83,3 +83,7 @@
   outline: 1px solid rgb(119, 240, 179);
   box-shadow: 0 0 18px rgb(119, 240, 179);
 }
+
+.cajatexto {
+  color: black;
+}
