@@ -10,6 +10,7 @@ import PerfilAdmin from "./components/Administrador/PerfilAdmin";
 import ListaUsuarios from "./components/Administrador/ListaUsuarios";
 import NavAdmin from "./components/Administrador/NavAdmin"
 import ConfirmarTk from "./components/Administrador/ConfirmarTk";
+import ResetPass from "./pages/ResetPass";
 // Calibracion
 import Calibracion from "./components/Calibracion/CalibracionEq";
 // Equipos
@@ -33,6 +34,7 @@ function App() {
         <Route path="/administrador/perfil" element={< PerfilAdmin/>}/>
         <Route path="/administrador/lista-usuarios" element= {<ListaUsuarios/>}/>
         <Route path="/confirmar" element= {<ConfirmarTk/>}/>
+        <Route path="/recuperar-password/:token" element={<ResetPass/>}/>
         
         <Route path="/navAdmin" element= {<NavAdmin/>}/>
         <Route
