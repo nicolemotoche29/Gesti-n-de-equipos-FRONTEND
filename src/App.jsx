@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Private } from "./routes/Private";
+import  PrivateRoute  from "./routes/PrivateRoute";
 //
 import Login from "./pages/Login";
 import RegistrarAdmin from "./components/Administrador/RegistrarAdmin";
@@ -18,6 +18,7 @@ import EquiposPg from "./components/Equipos/EquiposPg";
 import MantenimientoPg from "./components/Mantenimiento/MantenimientoPg";
 // Usuario
 import LoginUser from "./components/Usuario/LoginUser";
+import NavUser from "./components/Usuario/NavUser";
 
 function App() {
   return(
@@ -26,29 +27,37 @@ function App() {
         {/* Publicas */}
         <Route path="/" element={<Login/>}/>
         <Route path="/registrar-Admin" element={<RegistrarAdmin/>}/>
-        <Route path="/login-user" element={<LoginUser/>}/>
         <Route path="/recuperar/contraseña" element={<Recuperar/>} />
         <Route path="/administrador/perfil" element={< PerfilAdmin/>}/>
         <Route path="/administrador/lista-usuarios" element= {<ListaUsuarios/>}/>
-        <Route path="/calibracion" element= {<Calibracion/>}/>
-        <Route path="/equipos" element= {<EquiposPg/>}/>
-        <Route path="/mantenimiento" element= {<MantenimientoPg/>}/>
-         <Route path="/navAdmin" element= {<NavAdmin/>}/>
-         <Route path="/confirmar" element= {<ConfirmarTk/>}/>
-        {/* Privadas 
+        <Route path="/confirmar" element= {<ConfirmarTk/>}/>
+        
+        <Route path="/navAdmin" element= {<NavAdmin/>}/>
         <Route
           path="/administrador/*"
           element={
-            <Private>
-              <NavAdmin/>
               <Routes>
-                <Route path="registrar-equipo"/>
+                <Route path="/equipos" element= {<EquiposPg/>}/>
+                <Route path="/mantenimiento" element= {<MantenimientoPg/>}/>
+                <Route path="/calibracion" element= {<Calibracion/>}/>
               </Routes>
-            </Private>
           }
         />
         
-        */}
+        <Route path="/login-user" element={<LoginUser/>}/>
+        <Route path="/navUser" element ={<NavUser/>}/>
+        <Route
+          path="/usuario/*"
+          element={
+              <Routes>
+                <Route path="/equipos" element= {<EquiposPg/>}/>
+                <Route path="/mantenimiento" element= {<MantenimientoPg/>}/>
+                <Route path="/calibracion" element= {<Calibracion/>}/>
+              </Routes>
+          }
+        />
+        
+        
         
         
       </Routes>

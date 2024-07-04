@@ -1,0 +1,69 @@
+/* Estilos generales de la barra de navegación */
+.navbar {
+    background-color: #343a40; /* Color de fondo de la barra de navegación */
+    padding: 1rem; /* Espaciado interno */
+    display: flex; /* Distribuir los elementos en línea */
+    justify-content: center; /* Centrar horizontalmente los elementos */
+    align-items: center; /* Centrar verticalmente los elementos */
+    position: fixed; /* Hacer que la barra sea fija */
+    top: 0; /* Posicionarla en la parte superior */
+    left: 0; /* Posicionarla en la parte izquierda */
+    width: 100%; /* Hacer que ocupe todo el ancho */
+    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+}
+
+.navbar-nav {
+    list-style: none; /* Eliminar puntos de la lista */
+    display: flex; /* Distribuir los elementos en línea */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar rellenos */
+}
+
+.nav-item {
+    margin-right: 1.5rem; /* Espacio entre elementos */
+}
+
+.nav-item:last-child {
+    margin-right: 0; /* Eliminar margen derecho del último elemento */
+}
+
+.nav-link {
+    color: #ffffff; /* Color del texto */
+    text-decoration: none; /* Eliminar subrayado */
+    font-size: 1rem; /* Tamaño de la fuente */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.nav-link:hover {
+    color: #007bff; /* Color del texto al pasar el ratón */
+}
+
+.nav-link.active {
+    font-weight: bold; /* Resaltar el enlace activo */
+    color: #007bff; /* Color del texto del enlace activo */
+}
+
+/* Añadir margen superior al contenido principal para evitar que la barra de navegación fija lo tape */
+.main-content {
+    margin-top: 80px; /* Ajusta este valor según el alto de la barra de navegación */
+}
+
+/* Estilos adicionales para dispositivos móviles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Disponer los elementos en columna */
+        align-items: flex-start; /* Alinear los elementos al inicio */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Disponer los elementos en columna */
+    }
+
+    .nav-item {
+        margin: 0 0 1rem 0; /* Espaciado vertical entre elementos */
+    }
+
+    .nav-item:last-child {
+        margin-bottom: 0; /* Eliminar margen inferior del último elemento */
+    }
+}
