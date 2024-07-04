@@ -87,3 +87,17 @@
 .cajatexto {
   color: black;
 }
+
+/*Responsividad*/
+@media (max-width: 768px) {
+  .row {
+      flex-direction: column; 
+  }
+  .col-md-4 {
+      width: 100%; 
+  }
+  .tamaño-imagen {
+      max-width: 100%;
+      margin-left: 0; 
+  }
+}

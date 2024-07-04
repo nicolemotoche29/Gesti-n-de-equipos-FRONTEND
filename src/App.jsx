@@ -9,6 +9,7 @@ import Recuperar from "./pages/Recuperar"
 import PerfilAdmin from "./components/Administrador/PerfilAdmin";
 import ListaUsuarios from "./components/Administrador/ListaUsuarios";
 import NavAdmin from "./components/Administrador/NavAdmin"
+import ConfirmarTk from "./components/Administrador/ConfirmarTk";
 // Calibracion
 import Calibracion from "./components/Calibracion/CalibracionEq";
 // Equipos
@@ -33,6 +34,7 @@ function App() {
         <Route path="/equipos" element= {<EquiposPg/>}/>
         <Route path="/mantenimiento" element= {<MantenimientoPg/>}/>
          <Route path="/navAdmin" element= {<NavAdmin/>}/>
+         <Route path="/confirmar" element= {<ConfirmarTk/>}/>
         {/* Privadas 
         <Route
           path="/administrador/*"

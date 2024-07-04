@@ -1,9 +1,9 @@
-import axios from "axios";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 import login from '../assets/images/login.png';
 import profile from '../assets/images/profile.png';
-import Mensaje from "../components/Alerta/Mensaje";
+import Mensaje from '../components/Alerta/Mensaje';
 import '../App.css';
 
 const Login = () => {
@@ -14,7 +14,6 @@ const Login = () => {
         password: '',
     });
     const navigate = useNavigate();
-    
 
     const handleChange = (e) => {
         setForm({
@@ -45,23 +44,17 @@ const Login = () => {
         }
 
         try {
-            const url = `${import.meta.env.VITE_BACKEND_URL}/login`;
+            const url = `${import.meta.env.VITE_URL_BACKEND}/login`; // Corregido a VITE_URL_BACKEND
             const respuesta = await axios.post(url, form);
 
             if (respuesta && respuesta.data) {
                 localStorage.setItem('token', respuesta.data.token);
-                localStorage.setItem('role', respuesta.data.role || '');
-                setAuth(respuesta.data);
+                localStorage.setItem('role', 'admin'); // Asignar 'admin' como rol único para el administrador
 
-                if (respuesta.data.role === 'propietario') {
-                    navigate('/propietario');
-                } else if (respuesta.data.role === 'admin') {
-                    navigate('/admin');
-                } else {
-                    navigate('/cliente');
-                }
+                navigate('/navAdmin'); // Redirigir a la página NavAdmin para el administrador
             } else {
                 console.error('La respuesta o su propiedad "data" no están definidas correctamente:', respuesta);
+                setMensaje({ tipo: 'error', respuesta: 'Error al iniciar sesión. Por favor, verifica tus credenciales.' });
             }
         } catch (error) {
             // Manejo de errores
@@ -95,7 +88,7 @@ const Login = () => {
                                 
                                 <div className="relative">
                                     <input
-                                        type={showPassword ? "text" : "password"}
+                                        type={showPassword ? 'text' : 'password'}
                                         name="password"
                                         value={form.password}
                                         onChange={handleChange}
@@ -115,25 +108,15 @@ const Login = () => {
                                 <button type="submit" className="btnform mt-3">Iniciar Sesión</button>
                             </form>
                             <div>
-                                <Link
-                                    to="/recuperar/contraseña"
-                                >
-                                    ¿Olvidaste tu contraseña?
-                                </Link>
+                                <Link to="/recuperar/contraseña">¿Olvidaste tu contraseña?</Link>
                             </div>
                             
                             <div className="my-3">
-                                <p>
-                                    ¿No tienes una cuenta?{" "}
-                                </p>
+                                <p>¿No tienes una cuenta? </p>
                             </div>
                             
-                            <Link to="/login-user" className="btnform mt-2">
-                                Iniciar sesión como Usuario
-                            </Link>
-                            <Link to="/registrar-Admin" className="btnform mt-2">
-                                Registrarse como Administrador
-                            </Link>
+                            <Link to="/login-user" className="btnform mt-2">Iniciar sesión como Usuario</Link>
+                            <Link to="/registrar-Admin" className="btnform mt-2">Registrarse como Administrador</Link>
                         </div>
                     </div>
                 </div>
