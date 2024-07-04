@@ -4,11 +4,18 @@ import axios from 'axios';
 const EquiposPg = () => {
     const [equipos, setEquipos] = useState([]);
     const [nuevoEquipo, setNuevoEquipo] = useState({
-        // Define aquí los campos necesarios para crear un nuevo equipo
-        // Ejemplo: id: '',
-        //         nombre: '',
-        //         descripcion: '',
-        //         etc.
+        idcod: '',
+        descripcion: '',
+        marca: '',
+        modelos: '',
+        nserie: '',
+        accesorios: '',
+        fabricante: '',
+        caracteristicas: '',
+        con_instalacion: '',
+        con_utilizacion: '',
+        area: '',
+        idsupus: null
     });
 
     useEffect(() => {
@@ -17,19 +24,45 @@ const EquiposPg = () => {
 
     const obtenerEquipos = async () => {
         try {
-            const response = await axios.get(`${import.meta.env.VITE_URL_BACKEND}/equipos`);
+            const token = localStorage.getItem('token');
+            const response = await axios.get(`${import.meta.env.VITE_URL_BACKEND}/equipos`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             setEquipos(response.data);
         } catch (error) {
             console.error('Error al obtener los equipos:', error);
         }
     };
 
-    const crearNuevoEquipo = async () => {
+    const crearNuevoEquipo = async (e) => {
+        e.preventDefault();
         try {
-            const response = await axios.post(`${import.meta.env.VITE_URL_BACKEND}/equipos`, nuevoEquipo);
+            const token = localStorage.getItem('token');
+            const response = await axios.post(`${import.meta.env.VITE_URL_BACKEND}/equipos`, nuevoEquipo, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             console.log('Nuevo equipo creado:', response.data);
-            // Puedes actualizar la lista de equipos aquí si es necesario
+            // Actualizar la lista de equipos después de crear uno nuevo
             obtenerEquipos();
+            // Limpiar el formulario después de la creación
+            setNuevoEquipo({
+                idcod: '',
+                descripcion: '',
+                marca: '',
+                modelos: '',
+                nserie: '',
+                accesorios: '',
+                fabricante: '',
+                caracteristicas: '',
+                con_instalacion: '',
+                con_utilizacion: '',
+                area: 'ÁREA 6',
+                idsupus: null
+            });
         } catch (error) {
             console.error('Error al crear el nuevo equipo:', error);
         }
@@ -43,16 +76,44 @@ const EquiposPg = () => {
         // Implementa la lógica para eliminar un equipo específico
     };
 
+    const handleChange = (e) => {
+        setNuevoEquipo({
+            ...nuevoEquipo,
+            [e.target.name]: e.target.value
+        });
+    };
+
     return (
         <div>
             <h1>Equipos</h1>
 
             {/* Formulario para crear un nuevo equipo */}
             <form onSubmit={crearNuevoEquipo}>
-                {/* Campos del formulario para crear un nuevo equipo */}
-                {/* Ejemplo: */}
-                {/* <input type="text" value={nuevoEquipo.nombre} onChange={(e) => setNuevoEquipo({ ...nuevoEquipo, nombre: e.target.value })} /> */}
-                {/* Otros campos necesarios */}
+                <input
+                    type="text"
+                    name="idcod"
+                    value={nuevoEquipo.idcod}
+                    onChange={handleChange}
+                    placeholder="Código ID"
+                    required
+                />
+                <input
+                    type="text"
+                    name="descripcion"
+                    value={nuevoEquipo.descripcion}
+                    onChange={handleChange}
+                    placeholder="Descripción"
+                    required
+                />
+                <input
+                    type="text"
+                    name="marca"
+                    value={nuevoEquipo.marca}
+                    onChange={handleChange}
+                    placeholder="Marca"
+                    required
+                />
+                {/* Agrega los demás campos necesarios para el nuevo equipo */}
                 <button type="submit">Crear Equipo</button>
             </form>
 
@@ -60,12 +121,10 @@ const EquiposPg = () => {
             <ul>
                 {equipos.map((equipo) => (
                     <li key={equipo.id}>
-                        {/* Mostrar detalles del equipo */}
-                        {/* Ejemplo: */}
-                        {/* <p>{equipo.nombre} - {equipo.descripcion}</p> */}
+                        <p>{equipo.idcod} - {equipo.descripcion}</p>
                         {/* Botones para actualizar y eliminar */}
-                        {/* <button onClick={() => actualizarEquipo(equipo.id)}>Actualizar</button> */}
-                        {/* <button onClick={() => eliminarEquipo(equipo.id)}>Eliminar</button> */}
+                        <button onClick={() => actualizarEquipo(equipo.id)}>Actualizar</button>
+                        <button onClick={() => eliminarEquipo(equipo.id)}>Eliminar</button>
                     </li>
                 ))}
             </ul>
