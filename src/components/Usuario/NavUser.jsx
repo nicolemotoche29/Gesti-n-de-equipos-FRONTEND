@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./nav.css"
 
-const NavAdmin = () => {
+const NavUser = () => {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('role');
 
     // Verificar si el usuario está autenticado y tiene el rol de 'admin'
-    const isAuthenticated = token && role === 'admin';
+    const isAuthenticated = token && role === 'usuario';
 
     return (
         <nav className="navbar">
@@ -15,16 +14,16 @@ const NavAdmin = () => {
                 {isAuthenticated && (
                     <>
                         <li className="nav-item">
-                            <Link to="/administrador/equipos" className="nav-link">Equipos</Link>
+                            <Link to="/usuario/equipos" className="nav-link">Equipos</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/administrador/calibracion" className="nav-link">Calibración</Link>
+                            <Link to="/usuario/calibracion" className="nav-link">Calibracion</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/administrador/mantenimiento" className="nav-link">Mantenimiento</Link>
+                            <Link to="/usuario/mantenimiento" className="nav-link">Mantenimiento</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/administrador/verificacion" className="nav-link">Verificacion</Link>
+                            <Link to="/usuario/verificacion" className="nav-link">Verificacion</Link>
                         </li>
                     </>
                 )}
@@ -33,4 +32,4 @@ const NavAdmin = () => {
     );
 };
 
-export default NavAdmin;
+export default NavUser;

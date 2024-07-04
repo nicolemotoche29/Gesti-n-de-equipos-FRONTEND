@@ -45,23 +45,17 @@ const LoginUser = () => {
         }
 
         try {
-            const url = `${import.meta.env.VITE_BACKEND_URL}/login`;
+            const url = `${import.meta.env.VITE_URL_BACKEND}/usuarioArea/login`; 
             const respuesta = await axios.post(url, form);
 
             if (respuesta && respuesta.data) {
                 localStorage.setItem('token', respuesta.data.token);
-                localStorage.setItem('role', respuesta.data.role || '');
-                setAuth(respuesta.data);
+                localStorage.setItem('role', 'usuario');
 
-                if (respuesta.data.role === 'propietario') {
-                    navigate('/propietario');
-                } else if (respuesta.data.role === 'admin') {
-                    navigate('/admin');
-                } else {
-                    navigate('/cliente');
-                }
+                navigate('/navUser'); 
             } else {
                 console.error('La respuesta o su propiedad "data" no están definidas correctamente:', respuesta);
+                setMensaje({ tipo: 'error', respuesta: 'Error al iniciar sesión. Por favor, verifica tus credenciales.' });
             }
         } catch (error) {
             // Manejo de errores

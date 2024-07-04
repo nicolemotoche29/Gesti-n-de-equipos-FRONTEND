@@ -16,6 +16,8 @@ import Calibracion from "./components/Calibracion/CalibracionEq";
 import EquiposPg from "./components/Equipos/EquiposPg";
 // Mantenimiento
 import MantenimientoPg from "./components/Mantenimiento/MantenimientoPg";
+//Verificación
+import VerificacionPg from "./components/Verificaciones/VerificacionPg";
 // Usuario
 import LoginUser from "./components/Usuario/LoginUser";
 import NavUser from "./components/Usuario/NavUser";
@@ -40,6 +42,7 @@ function App() {
                 <Route path="/equipos" element= {<EquiposPg/>}/>
                 <Route path="/mantenimiento" element= {<MantenimientoPg/>}/>
                 <Route path="/calibracion" element= {<Calibracion/>}/>
+                <Route path="/verificacion" element= {<VerificacionPg/>}/>
               </Routes>
           }
         />
@@ -53,12 +56,10 @@ function App() {
                 <Route path="/equipos" element= {<EquiposPg/>}/>
                 <Route path="/mantenimiento" element= {<MantenimientoPg/>}/>
                 <Route path="/calibracion" element= {<Calibracion/>}/>
+                <Route path="/verificacion" element= {<VerificacionPg/>}/>
               </Routes>
           }
         />
-        
-        
-        
         
       </Routes>
     </Router>

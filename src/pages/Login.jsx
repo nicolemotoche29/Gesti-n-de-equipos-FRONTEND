@@ -44,14 +44,14 @@ const Login = () => {
         }
 
         try {
-            const url = `${import.meta.env.VITE_URL_BACKEND}/login`; // Corregido a VITE_URL_BACKEND
+            const url = `${import.meta.env.VITE_URL_BACKEND}/login`; 
             const respuesta = await axios.post(url, form);
 
             if (respuesta && respuesta.data) {
                 localStorage.setItem('token', respuesta.data.token);
-                localStorage.setItem('role', 'admin'); // Asignar 'admin' como rol único para el administrador
+                localStorage.setItem('role', 'admin'); 
 
-                navigate('/navAdmin'); // Redirigir a la página NavAdmin para el administrador
+                navigate('/navAdmin'); 
             } else {
                 console.error('La respuesta o su propiedad "data" no están definidas correctamente:', respuesta);
                 setMensaje({ tipo: 'error', respuesta: 'Error al iniciar sesión. Por favor, verifica tus credenciales.' });
