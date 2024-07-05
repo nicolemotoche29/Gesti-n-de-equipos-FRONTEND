@@ -3,7 +3,7 @@ import axios from 'axios';
 import Mensaje from "../Alerta/Mensaje";
 
 const ConfirmarTKUser = () => {
-    const [mensaje, setMensaje] = useState(null); // Estado inicial null para ocultar el mensaje
+    const [mensaje, setMensaje] = useState(null);
     const [token, setToken] = useState('');
 
     const confirmarToken = async () => {

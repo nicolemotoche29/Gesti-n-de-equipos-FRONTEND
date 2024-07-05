@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Mensaje from "../Alerta/Mensaje";
 
 const ConfirmarTk = () => {
-    const [mensaje, setMensaje] = useState('');
+    const [mensaje, setMensaje] = useState(null); // Estado inicial null para ocultar el mensaje
     const [token, setToken] = useState('');
 
     const confirmarToken = async () => {
         try {
             const response = await axios.get(`${import.meta.env.VITE_URL_BACKEND}/confirmar/${token}`);
-            setMensaje(response.data.message);
-            // Aquí puedes manejar la respuesta del backend según sea necesario
+            setMensaje({
+                respuesta: response.data.msg || "TOKEN confirmado",
+                tipo: true
+            });
         } catch (error) {
             console.error('Error al confirmar el token:', error);
-            setMensaje('Error al confirmar el token');
+            setMensaje({
+                tipo: "error",
+                respuesta: error.response.data.msg || "Error al confirmar token"
+            });
         }
     };
 
@@ -23,9 +29,9 @@ const ConfirmarTk = () => {
     return (
         <div>
             <h1>Confirmación de Token</h1>
+            {mensaje && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
             <input type="text" placeholder="Ingrese el token" value={token} onChange={handleInputChange} />
             <button onClick={confirmarToken}>Confirmar Token</button>
-            {mensaje && <p>{mensaje}</p>}
         </div>
     );
 };

@@ -5,7 +5,6 @@ import "./nav.css"
 const NavAdmin = () => {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('role');
-    console.log(token)
 
     // Verificar si el usuario está autenticado y tiene el rol de 'admin'
     const isAuthenticated = token && role === 'admin';

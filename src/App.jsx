@@ -37,7 +37,7 @@ function App() {
         <Route path="/recuperar/contraseña" element={<Recuperar/>} />
         <Route path="/administrador/perfil" element={< PerfilAdmin/>}/>
         <Route path="/administrador/lista-usuarios" element= {<ListaUsuarios/>}/>
-        <Route path="/confirmar" element= {<ConfirmarTk/>}/>
+        <Route path="/confirmar/:token" element= {<ConfirmarTk/>}/>
         <Route path="/recuperar-password/:token" element={<ResetPass/>}/>
         
         {/* ADMINIISTRADOR */}
