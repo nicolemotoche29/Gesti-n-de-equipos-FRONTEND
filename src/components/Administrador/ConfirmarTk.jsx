@@ -33,6 +33,11 @@ const ConfirmarTk = () => {
         <div>
             <h1>Confirmación de Token</h1>
             {mensaje && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
+            {mensaje && mensaje.tipo === true && (
+                <Link to="/" className="btnform mt-2">
+                    Iniciar sesión como Administrador
+                </Link>
+            )}
         </div>
     );
 };
