@@ -1,0 +1,102 @@
+/* mantenimiento.css */
+
+/* Estilos específicos para la página de Mantenimiento */
+.mantenimiento-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mantenimiento-title {
+    text-align: center;
+    color: #333;
+}
+
+.mantenimiento-form {
+    margin-bottom: 20px;
+}
+
+.mantenimiento-form input[type="date"],
+.mantenimiento-form input[type="text"] {
+    width: calc(50% - 10px);
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.mantenimiento-form input[type="date"]:focus,
+.mantenimiento-form input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.mantenimiento-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.mantenimiento-form button:hover {
+    background-color: #0056b3;
+}
+
+.mantenimiento-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mantenimiento-list-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mantenimiento-list-item p {
+    margin: 5px 0;
+}
+
+.mantenimiento-list-item button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.mantenimiento-list-item button:hover {
+    background-color: #c82333;
+}
+
+.mantenimiento-delete-input {
+    margin-top: 10px;
+}
+
+.mantenimiento-delete-input input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.mantenimiento-delete-input button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.mantenimiento-delete-input button:hover {
+    background-color: #c82333;
+}

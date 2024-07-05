@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './equipos.css';
 
 const EquiposPg = () => {
     const [equipos, setEquipos] = useState([]);
@@ -159,11 +160,11 @@ const EquiposPg = () => {
     };
 
     return (
-        <div>
-            <h1>Equipos</h1>
+        <div className="equipos-container">
+            <h1 className="equipos-title">Equipos</h1>
 
             {/* Formulario para crear un nuevo equipo */}
-            <form onSubmit={crearNuevoEquipo}>
+            <form className="equipos-form" onSubmit={crearNuevoEquipo}>
                 <input
                     type="text"
                     name="idcod"
@@ -260,7 +261,7 @@ const EquiposPg = () => {
             
             {/* Formulario para actualizar un equipo */}
             {mostrarFormularioActualizar && (
-                <form onSubmit={actualizarEquipo}>
+                <form className="equipos-form" onSubmit={actualizarEquipo}>
                     <input
                         type="text"
                         name="idcod"
@@ -355,7 +356,7 @@ const EquiposPg = () => {
             )}
 
             {/* Lista de equipos */}
-            <ul>
+            <ul className="equipos-list">
                 {equipos.map((equipo) => (
                     <li key={equipo.idcod}>
                         <p>{equipo.idcod} - {equipo.descripcion}</p>
@@ -366,7 +367,7 @@ const EquiposPg = () => {
             </ul>
 
             {/* Campo para ingresar el ID del equipo a eliminar */}
-            <div>
+            <div className="equipos-delete-input">
                 <input
                     type="text"
                     value={idEquipoEliminar}
