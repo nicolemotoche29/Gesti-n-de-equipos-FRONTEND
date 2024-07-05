@@ -108,14 +108,11 @@ const LoginUser = () => {
                                 
                                 <button type="submit" className="btnform mt-3">Iniciar Sesión</button>
                             </form>
-                            <div>
-                                <Link
-                                    to="/recuperar/contraseña"
-                                >
-                                    ¿Olvidaste tu contraseña?
-                                </Link>
-                            </div>
                             
+                            <div>
+                                <Link to="/recuperar/contraseña/usuario">¿Olvidaste tu contraseña?</Link>
+                            </div>
+
                             <div className="my-3">
                                 <p>
                                     ¿No tienes una cuenta?{" "}
