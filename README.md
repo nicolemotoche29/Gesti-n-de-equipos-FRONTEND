@@ -40,8 +40,9 @@ Desarrollar un sistema web para la gestión de equipos para la Secretaria del Am
 </details>
 
 #### Funcionamiento del proyecto 💻
-- Requisitos Previos:
-Asegúrarse de tener Node.js instalado en la máquina.
+> [!WARNING]
+>  Requisitos Previos:
+>  Asegúrarse de tener Node.js instalado en la máquina.
 
 - Clonar el Repositorio:
 Copia el enlace del repositorio desde GitHub.
@@ -57,4 +58,5 @@ Ejecuta ` npm install ` para instalar todas las dependencias necesarias.
 
 - Ejecutar la Aplicación:
 Usa el comando ` npm run dev ` para ejecutar la aplicación en un emulador o dispositivo conectado.
+
 
