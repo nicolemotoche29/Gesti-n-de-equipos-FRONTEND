@@ -66,4 +66,12 @@ Usa el comando ` npm run dev ` para ejecutar la aplicación en un emulador o dis
   <sup> Video </sup>
 </p>
 
+## Autor
+
+|  [<img src="https://avatars.githubusercontent.com/u/85316345?v=4" width=115><br><sub>Nicole Motoche</sub>](https://github.com/nicolemotoche29) |
+
+<p align='center'>
+<a href="https://github.com/Einarr07/Flutter-proyecto_final/tree/main"><img src="https://i.ibb.co/4KtpYxb/octocat-clean-mini.png" /></a><br>
+  <sup> Gracias </sup>
+</p>
 
