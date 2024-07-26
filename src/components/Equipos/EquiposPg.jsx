@@ -374,7 +374,7 @@ const EquiposPg = () => {
                     onChange={handleChange}
                     placeholder="Ingrese el ID del equipo a eliminar"
                 />
-                <button onClick={eliminarEquipo}>Eliminar </button>
+                <button onClick={eliminarEquipo}>Eliminar E </button>
             </div>
         </div>
     );
