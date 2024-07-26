@@ -1,22 +1,26 @@
-/* calibraciones.css */
-
 /* Estilos específicos para la página de Calibraciones */
 .calibraciones-container {
-    max-width: 800px;
+    max-width: 1200px; /* Ajustado para un ancho máximo razonable */
+    width: 1200%; /* O puedes cambiar a 1200px o el valor que prefieras */
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 70px; /* Ajusta el valor para mover más a la derecha */
 }
 
 .calibraciones-title {
     text-align: center;
     color: #333;
+    margin-bottom: 20px;
 }
 
 .calibraciones-form {
     margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .calibraciones-form input[type="date"],
@@ -78,7 +82,11 @@
 }
 
 .calibraciones-delete-input {
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .calibraciones-delete-input input[type="text"] {
@@ -92,11 +100,98 @@
     background-color: #dc3545;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 19px 40px;
     cursor: pointer;
     border-radius: 4px;
+    font-size: 18px;
 }
 
 .calibraciones-delete-input button:hover {
     background-color: #c82333;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.id-comments-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    gap: 10px;
+    background-color: #f9f9f9;
+}
+
+.calibraciones-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.calibraciones-list li {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calibraciones-list p {
+    margin: 0;
+}
+
+.calibraciones-delete-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.calibraciones-delete-input input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.calibraciones-delete-input button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.calibraciones-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaciado entre los elementos del formulario */
+    margin-bottom: 30px;
+}
+
+.calibraciones-form label {
+    font-weight: bold;
+}
+
+.calibraciones-form input[type="date"],
+.calibraciones-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Asegura que los inputs ocupen el ancho completo del contenedor */
+}
+
+.calibraciones-form input[type="date"]:focus,
+.calibraciones-form input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
 }

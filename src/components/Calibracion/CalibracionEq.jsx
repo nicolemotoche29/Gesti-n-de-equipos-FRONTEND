@@ -135,36 +135,40 @@ const CalibracionEq = () => {
 
             {/* Formulario para crear una nueva calibración */}
             <form className="calibraciones-form" onSubmit={crearNuevaCalibracion}>
+                <label htmlFor="ul_fecha_cal_in">Última fecha de calibración interna: </label>
                 <input
                     type="date"
+                    id="ul_fecha_cal_in"
                     name="ul_fecha_cal_in"
                     value={nuevaCalibracion.ul_fecha_cal_in}
                     onChange={(e) => setNuevaCalibracion({ ...nuevaCalibracion, ul_fecha_cal_in: e.target.value })}
-                    placeholder="Última fecha de calibración interna"
                     required
                 />
+                <label htmlFor="prox_fecha_cal_in">Próxima fecha de calibración interna: </label>
                 <input
                     type="date"
+                    id="prox_fecha_cal_in"
                     name="prox_fecha_cal_in"
                     value={nuevaCalibracion.prox_fecha_cal_in}
                     onChange={(e) => setNuevaCalibracion({ ...nuevaCalibracion, prox_fecha_cal_in: e.target.value })}
-                    placeholder="Próxima fecha de calibración interna"
                     required
                 />
+                <label htmlFor="ul_fecha_cal_ex">Última fecha de calibración externa: </label>
                 <input
                     type="date"
+                    id="ul_fecha_cal_ex"
                     name="ul_fecha_cal_ex"
                     value={nuevaCalibracion.ul_fecha_cal_ex}
                     onChange={(e) => setNuevaCalibracion({ ...nuevaCalibracion, ul_fecha_cal_ex: e.target.value })}
-                    placeholder="Última fecha de calibración externa"
                     required
                 />
+                <label htmlFor="prox_fecha_cal_ex">Próxima fecha de calibración externa: </label>
                 <input
                     type="date"
+                    id="prox_fecha_cal_ex"
                     name="prox_fecha_cal_ex"
                     value={nuevaCalibracion.prox_fecha_cal_ex}
                     onChange={(e) => setNuevaCalibracion({ ...nuevaCalibracion, prox_fecha_cal_ex: e.target.value })}
-                    placeholder="Próxima fecha de calibración externa"
                     required
                 />
                 <input
@@ -182,7 +186,9 @@ const CalibracionEq = () => {
                     onChange={(e) => setNuevaCalibracion({ ...nuevaCalibracion, comentarios: e.target.value })}
                     placeholder="Comentarios"
                 />
-                <button type="submit">Crear Calibración</button>
+                <div className="button-container">
+                    <button type="submit">Crear Calibración</button>
+                </div>
             </form>
 
             <h2>Actualizar Calibración</h2>
@@ -190,54 +196,60 @@ const CalibracionEq = () => {
             {/* Formulario para actualizar una calibración */}
             {mostrarFormularioActualizar && (
                 <form className="calibraciones-form" onSubmit={actualizarCalibracion}>
+                    <label htmlFor="ul_fecha_cal_in_actualizar">Última fecha de calibración interna</label>
                     <input
                         type="date"
+                        id="ul_fecha_cal_in_actualizar"
                         name="ul_fecha_cal_in"
                         value={calibracionActualizar.ul_fecha_cal_in}
                         onChange={handleChangeActualizar}
-                        placeholder="Última fecha de calibración interna"
                         required
                     />
+                    <label htmlFor="prox_fecha_cal_in_actualizar">Próxima fecha de calibración interna</label>
                     <input
                         type="date"
+                        id="prox_fecha_cal_in_actualizar"
                         name="prox_fecha_cal_in"
                         value={calibracionActualizar.prox_fecha_cal_in}
                         onChange={handleChangeActualizar}
-                        placeholder="Próxima fecha de calibración interna"
                         required
                     />
+                    <label htmlFor="ul_fecha_cal_ex_actualizar">Última fecha de calibración externa</label>
                     <input
                         type="date"
+                        id="ul_fecha_cal_ex_actualizar"
                         name="ul_fecha_cal_ex"
                         value={calibracionActualizar.ul_fecha_cal_ex}
                         onChange={handleChangeActualizar}
-                        placeholder="Última fecha de calibración externa"
                         required
                     />
+                    <label htmlFor="prox_fecha_cal_ex_actualizar">Próxima fecha de calibración externa</label>
                     <input
                         type="date"
+                        id="prox_fecha_cal_ex_actualizar"
                         name="prox_fecha_cal_ex"
                         value={calibracionActualizar.prox_fecha_cal_ex}
                         onChange={handleChangeActualizar}
-                        placeholder="Próxima fecha de calibración externa"
                         required
                     />
-                    <input
-                        type="text"
-                        name="idcod_calibracion"
-                        value={calibracionActualizar.idcod_calibracion}
-                        onChange={handleChangeActualizar}
-                        placeholder="ID de Calibración"
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="comentarios"
-                        value={calibracionActualizar.comentarios}
-                        onChange={handleChangeActualizar}
-                        placeholder="Comentarios"
-                    />
-                    <button type="submit">Actualizar Calibración</button>
+                    <div className="id-comments-container">
+                        <input
+                            type="text"
+                            name="idcod_calibracion"
+                            value={calibracionActualizar.idcod_calibracion}
+                            onChange={handleChangeActualizar}
+                            placeholder="ID de Calibración"
+                            required
+                        />
+                        <input
+                            type="text"
+                            name="comentarios"
+                            value={calibracionActualizar.comentarios}
+                            onChange={handleChangeActualizar}
+                            placeholder="Comentarios"
+                        />
+                    </div>
+                    <button type="submit">Actualizr Calibración</button>
                 </form>
             )}
 
@@ -249,7 +261,7 @@ const CalibracionEq = () => {
                         <p>Comentarios: {calibracion.comentarios}</p>
                         {/* Botones para actualizar y eliminar */}
                         <button onClick={() => prepararActualizarCalibracion(calibracion)}>Actualizar</button>
-                        <button onClick={() => eliminarCalibracion(calibracion.idcod_calibracion)}>Eliminar</button>
+                        {/*<button onClick={() => eliminarCalibracion(calibracion.idcod_calibracion)}>Eliminar</button>*/}
                     </li>
                 ))}
             </ul>
