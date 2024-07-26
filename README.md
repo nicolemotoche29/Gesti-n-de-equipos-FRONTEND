@@ -67,9 +67,12 @@ Usa el comando ` npm run dev ` para ejecutar la aplicación en un emulador o dis
 </p>
 
 ## Autor
-
+<p align='center'>
+  
 | [<img src="https://avatars.githubusercontent.com/u/85316345?v=4" width=115><br><sub>Nicole Motoche</sub>](https://github.com/nicolemotoche29) |
 | :---: |
+
+</p>
 
 <p align='center'>
 <a href="https://github.com/nicolemotoche29/Gestion-de-equipos-FRONTEND"><img src="https://i.ibb.co/4KtpYxb/octocat-clean-mini.png" /></a><br>
