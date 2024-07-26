@@ -1,22 +1,26 @@
-/* equipos.css */
-
 /* Estilos específicos para la página de Equipos */
 .equipos-container {
-    max-width: 800px;
+    max-width: 1200px; /* Ajustado para un ancho máximo razonable */
+    width: 1200%; /* O puedes cambiar a 1200px o el valor que prefieras */
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 70px; /* Ajusta el valor para mover más a la derecha */
 }
 
 .equipos-title {
     text-align: center;
     color: #333;
+    margin-bottom: 20px;
 }
 
 .equipos-form {
     margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .equipos-form input[type="text"],
@@ -31,7 +35,7 @@
 .equipos-form input[type="text"]:focus,
 .equipos-form input[type="number"]:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: #76e9aaf6;
 }
 
 .equipos-form button {
@@ -44,7 +48,7 @@
 }
 
 .equipos-form button:hover {
-    background-color: #0056b3;
+    background-color: #2f6299;
 }
 
 .equipos-list {
@@ -78,11 +82,15 @@
 }
 
 .equipos-delete-input {
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .equipos-delete-input input[type="text"] {
-    width: 70%;
+    width: 79%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -92,11 +100,48 @@
     background-color: #dc3545;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 19px 40px;
     cursor: pointer;
     border-radius: 4px;
+    font-size: 18px;
 }
 
 .equipos-delete-input button:hover {
     background-color: #c82333;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.id-comments-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    gap: 10px;
+    background-color: #f9f9f9;
+}
+
+.equipos-list li {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.equipos-list p {
+    margin: 0;
 }
