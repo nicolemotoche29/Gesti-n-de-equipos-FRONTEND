@@ -1,46 +1,71 @@
 /* Estilos generales de la barra de navegación */
 .navbar {
-    background-color: #343a40; /* Color de fondo de la barra de navegación */
-    padding: 1rem; /* Espaciado interno */
+    background-color: #007bff; /* Color de fondo de la barra de navegación */
+    padding: 0.5rem 1rem; /* Espaciado interno */
     display: flex; /* Distribuir los elementos en línea */
-    justify-content: center; /* Centrar horizontalmente los elementos */
+    justify-content: space-between; /* Espacio entre el logo y el menú */
     align-items: center; /* Centrar verticalmente los elementos */
     position: fixed; /* Hacer que la barra sea fija */
     top: 0; /* Posicionarla en la parte superior */
     left: 0; /* Posicionarla en la parte izquierda */
     width: 100%; /* Hacer que ocupe todo el ancho */
     z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    background: linear-gradient(135deg, #929cf1, #42d1f1); /* Fondo degradado */
 }
+
+.navbar-brand {
+    flex: 1; /* Ocupa el espacio disponible */
+    margin-top: -280px; /* Ajusta este valor según sea necesario */
+}
+
+.brand-logo {
+    color: #ffffff; /* Color del texto del logo */
+    text-decoration: none; /* Eliminar subrayado */
+    font-size: 2rem; /* Tamaño del logo */
+    font-weight:  bold ;
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+    margin-top: -90px; /* Mueve el logo 10px hacia arriba */
+}
+
+.brand-logo:hover {
+    color: #d4aff1; /* Color del texto al pasar el ratón */
+}
+
 
 .navbar-nav {
     list-style: none; /* Eliminar puntos de la lista */
     display: flex; /* Distribuir los elementos en línea */
     margin: 0; /* Eliminar márgenes */
     padding: 0; /* Eliminar rellenos */
+    flex: 2; /* Ocupa el espacio restante entre el logo y el botón de menú */
+    justify-content: center; /* Centrar horizontalmente los elementos */
+    margin-top: 140px; /* Agregar margen superior para mover hacia abajo */
 }
 
 .nav-item {
-    margin-right: 1.5rem; /* Espacio entre elementos */
-}
-
-.nav-item:last-child {
-    margin-right: 0; /* Eliminar margen derecho del último elemento */
+    margin: 0 1rem; /* Espacio entre elementos */
 }
 
 .nav-link {
     color: #ffffff; /* Color del texto */
     text-decoration: none; /* Eliminar subrayado */
-    font-size: 1rem; /* Tamaño de la fuente */
-    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+    font-size: 1.25rem; /* Tamaño de la fuente */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para el cambio de color y efecto */
 }
 
 .nav-link:hover {
-    color: #007bff; /* Color del texto al pasar el ratón */
+    color: #f0f0f0; /* Color del texto al pasar el ratón */
+    transform: scale(1.1); /* Efecto de escala al pasar el ratón */
 }
 
 .nav-link.active {
     font-weight: bold; /* Resaltar el enlace activo */
-    color: #007bff; /* Color del texto del enlace activo */
+    color: #f0f0f0; /* Color del texto del enlace activo */
+}
+
+.navbar-toggle {
+    display: none; /* Ocultar el botón de menú en pantallas grandes */
 }
 
 /* Añadir margen superior al contenido principal para evitar que la barra de navegación fija lo tape */
@@ -52,18 +77,43 @@
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column; /* Disponer los elementos en columna */
-        align-items: flex-start; /* Alinear los elementos al inicio */
+        align-items: stretch; /* Alinear los elementos al ancho completo */
+        padding: 1rem; /* Aumentar el espaciado interno */
     }
 
     .navbar-nav {
+        display: flex; /* Mostrar el menú en dispositivos móviles */
         flex-direction: column; /* Disponer los elementos en columna */
+        width: 100%; /* Hacer que el menú ocupe todo el ancho */
+        margin-top: 1rem; /* Espacio entre el logo y el menú */
+    }
+
+    .navbar-toggle {
+        display: block; /* Mostrar el botón de menú en dispositivos móviles */
+        cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+        font-size: 1.5rem; /* Tamaño del icono de menú */
+        color: #ffffff; /* Color del icono */
+        margin-top: 1rem; /* Espacio superior para el botón de menú */
+    }
+
+    .toggle-icon {
+        font-size: 1.5rem; /* Tamaño del icono de menú */
+    }
+
+    .navbar-nav.active {
+        display: flex; /* Mostrar el menú cuando se activa el botón */
     }
 
     .nav-item {
-        margin: 0 0 1rem 0; /* Espaciado vertical entre elementos */
+        margin: 1rem 0; /* Espaciado vertical entre elementos */
     }
+}
 
-    .nav-item:last-child {
-        margin-bottom: 0; /* Eliminar margen inferior del último elemento */
-    }
+/* Estilo para la imagen en el pie de página */
+.footer-image {
+    display: block; /* Asegúrate de que la imagen sea un bloque */
+    max-width: 55%; /* Asegura que la imagen no exceda el ancho de su contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    margin: 20px auto 0; /* Espaciado superior y centrado horizontal */
+    transform: translateY(-320px) translateX(50px); /* Ajustar la posición */
 }
