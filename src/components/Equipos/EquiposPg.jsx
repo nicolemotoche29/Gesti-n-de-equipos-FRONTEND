@@ -171,7 +171,7 @@ const EquiposPg = () => {
                         name="idcod"
                         value={nuevoEquipo.idcod}
                         onChange={(e) => setNuevoEquipo({ ...nuevoEquipo, idcod: e.target.value })}
-                        placeholder="Código ID"
+                        placeholder="Código ID: ejemplo A-01-01"
                         required
                     />
                     <input
