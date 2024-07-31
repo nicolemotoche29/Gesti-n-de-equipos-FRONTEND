@@ -1,22 +1,30 @@
-/* mantenimiento.css */
-
 /* Estilos específicos para la página de Mantenimiento */
 .mantenimiento-container {
-    max-width: 800px;
+    max-width: 1200px;
+    width: 1200%;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 70px;
 }
 
 .mantenimiento-title {
     text-align: center;
     color: #333;
+    margin-bottom: 20px;
 }
 
 .mantenimiento-form {
     margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
 .mantenimiento-form input[type="date"],
@@ -26,12 +34,17 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 100%;
 }
 
 .mantenimiento-form input[type="date"]:focus,
 .mantenimiento-form input[type="text"]:focus {
     outline: none;
     border-color: #007bff;
+}
+
+.mantenimiento-form label {
+    font-weight: bold;
 }
 
 .mantenimiento-form button {
@@ -41,6 +54,8 @@
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 4px;
+    font-size: 16px;
+    align-self: center;
 }
 
 .mantenimiento-form button:hover {
@@ -78,7 +93,11 @@
 }
 
 .mantenimiento-delete-input {
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .mantenimiento-delete-input input[type="text"] {
@@ -95,8 +114,94 @@
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 4px;
+    font-size: 16px;
 }
 
 .mantenimiento-delete-input button:hover {
     background-color: #c82333;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    align-self: center;
+}
+
+.button-container button:hover {
+    background-color: #0056b3;
+}
+
+.id-comments-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    gap: 10px;
+    background-color: #f9f9f9;
+}
+
+.mantenimiento-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mantenimiento-list li {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mantenimiento-list p {
+    margin: 0;
+}
+
+.mantenimiento-delete-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.mantenimiento-delete-input input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.mantenimiento-delete-input button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.mantenimiento-create-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    align-self: center;
+}
+
+.mantenimiento-create-button:hover {
+    background-color: #0056b3;
 }

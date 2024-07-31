@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { format } from 'date-fns';
 import './Mantenimiento.css';
 
 const MantenimientoPg = () => {
@@ -128,42 +129,50 @@ const MantenimientoPg = () => {
         });
     };
 
+    const formatearFecha = (fecha) => {
+        return format(new Date(fecha), 'yyyy-MM-dd');
+    };
+
     return (
         <div className="mantenimiento-container">
             <h1 className="mantenimiento-title">Mantenimientos</h1>
 
             {/* Formulario para crear un nuevo mantenimiento */}
             <form className="mantenimiento-form" onSubmit={crearNuevoMantenimiento}>
+                <label htmlFor="ul_fecha_man_in">Última fecha de mantenimiento interno: </label>
                 <input
                     type="date"
+                    id="ul_fecha_man_in"
                     name="ul_fecha_man_in"
                     value={nuevoMantenimiento.ul_fecha_man_in}
                     onChange={(e) => setNuevoMantenimiento({ ...nuevoMantenimiento, ul_fecha_man_in: e.target.value })}
-                    placeholder="Última fecha de mantenimiento interno"
                     required
                 />
+                <label htmlFor="prox_fecha_man_in">Próxima fecha de mantenimiento interno: </label>
                 <input
                     type="date"
+                    id="prox_fecha_man_in"
                     name="prox_fecha_man_in"
                     value={nuevoMantenimiento.prox_fecha_man_in}
                     onChange={(e) => setNuevoMantenimiento({ ...nuevoMantenimiento, prox_fecha_man_in: e.target.value })}
-                    placeholder="Próxima fecha de mantenimiento interno"
                     required
                 />
+                <label htmlFor="ul_fecha_man_ex">Última fecha de mantenimiento externo: </label>
                 <input
                     type="date"
+                    id="ul_fecha_man_ex"
                     name="ul_fecha_man_ex"
                     value={nuevoMantenimiento.ul_fecha_man_ex}
                     onChange={(e) => setNuevoMantenimiento({ ...nuevoMantenimiento, ul_fecha_man_ex: e.target.value })}
-                    placeholder="Última fecha de mantenimiento externo"
                     required
                 />
+                <label htmlFor="prox_fecha_man_ex">Próxima fecha de mantenimiento externo:</label>
                 <input
                     type="date"
+                    id="prox_fecha_man_ex"
                     name="prox_fecha_man_ex"
                     value={nuevoMantenimiento.prox_fecha_man_ex}
                     onChange={(e) => setNuevoMantenimiento({ ...nuevoMantenimiento, prox_fecha_man_ex: e.target.value })}
-                    placeholder="Próxima fecha de mantenimiento externo"
                     required
                 />
                 <input
@@ -181,7 +190,9 @@ const MantenimientoPg = () => {
                     onChange={(e) => setNuevoMantenimiento({ ...nuevoMantenimiento, comentario: e.target.value })}
                     placeholder="Comentario"
                 />
-                <button type="submit">Crear Mantenimiento</button>
+                <div className="button-container">
+                    <button type="submit">Crear Mantenimiento</button>
+                </div>
             </form>
 
             <h2>Actualizar Mantenimiento</h2>
@@ -189,38 +200,43 @@ const MantenimientoPg = () => {
             {/* Formulario para actualizar un mantenimiento */}
             {mostrarFormularioActualizar && (
                 <form className="mantenimiento-form" onSubmit={actualizarMantenimiento}>
+                    <label htmlFor="ul_fecha_man_in">Última fecha de mantenimiento interno: </label>
                     <input
                         type="date"
+                        id="ul_fecha_man_in"
                         name="ul_fecha_man_in"
                         value={mantenimientoActualizar.ul_fecha_man_in}
                         onChange={handleChangeActualizar}
-                        placeholder="Última fecha de mantenimiento interno"
                         required
                     />
+                    <label htmlFor="prox_fecha_man_in">Próxima fecha de mantenimiento interno:</label>
                     <input
                         type="date"
+                        id="prox_fecha_man_in"
                         name="prox_fecha_man_in"
                         value={mantenimientoActualizar.prox_fecha_man_in}
                         onChange={handleChangeActualizar}
-                        placeholder="Próxima fecha de mantenimiento interno"
                         required
                     />
+                    <label htmlFor="ul_fecha_man_ex">Última fecha de mantenimiento externo: </label>
                     <input
                         type="date"
+                        id="ul_fecha_man_ex"
                         name="ul_fecha_man_ex"
                         value={mantenimientoActualizar.ul_fecha_man_ex}
                         onChange={handleChangeActualizar}
-                        placeholder="Última fecha de mantenimiento externo"
                         required
                     />
+                    <label htmlFor="prox_fecha_man_ex">Próxima fecha de mantenimiento externo:</label>
                     <input
                         type="date"
+                        id="prox_fecha_man_ex"
                         name="prox_fecha_man_ex"
                         value={mantenimientoActualizar.prox_fecha_man_ex}
                         onChange={handleChangeActualizar}
-                        placeholder="Próxima fecha de mantenimiento externo"
                         required
                     />
+                    <div className="id-comments-container">
                     <input
                         type="text"
                         name="id_equipo"
@@ -236,6 +252,7 @@ const MantenimientoPg = () => {
                         onChange={handleChangeActualizar}
                         placeholder="Comentario"
                     />
+                    </div>
                     <button type="submit">Actualizar Mantenimiento</button>
                 </form>
             )}
@@ -244,10 +261,11 @@ const MantenimientoPg = () => {
             <ul className="mantenimiento-list">
                 {mantenimientos.map((mantenimiento) => (
                     <li key={mantenimiento.id_equipo}>
-                        <p>{mantenimiento.id_equipo} - {mantenimiento.ul_fecha_man_in}</p>
+                        <p>{mantenimiento.id_equipo} - {formatearFecha(mantenimiento.ul_fecha_man_in)}</p>
+                        <p>Comentario: {mantenimiento.comentario}</p>
                         {/* Botones para actualizar y eliminar */}
                         <button onClick={() => prepararActualizarMantenimiento(mantenimiento)}>Actualizar</button>
-                        <button onClick={() => eliminarMantenimiento(mantenimiento.id_equipo)}>Eliminar</button>
+                        {/*<button onClick={() => eliminarMantenimiento(mantenimiento.id_equipo)}>Eliminar</button>*/}
                     </li>
                 ))}
             </ul>
