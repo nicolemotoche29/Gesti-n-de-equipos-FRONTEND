@@ -1,22 +1,33 @@
 /* Estilos para el formulario y la lista de verificaciones */
 .verificacion-container {
-    max-width: 800px;
-    margin: auto;
+    max-width: 1000px;
+    width: 1000;
+    margin: 20px auto;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #fff;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 190px;
+}
+.verificacion-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .verificacion-container h1 {
-    font-size: 24px;
+    font-size: 50px;
     margin-bottom: 20px;
     color: #333;
 }
 
 .verificacion-form {
     margin-bottom: 20px;
+}
+
+.verificacion-form label{
+    margin: 10px 5px; /* Margen alrededor del botón */
 }
 
 .verificacion-form input[type="text"],
@@ -28,6 +39,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
+    
 }
 
 .verificacion-form label {
@@ -43,6 +55,7 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
+    margin: 10px 5px; /* Margen alrededor del botón */
 }
 
 .verificacion-form button:hover {
@@ -81,3 +94,74 @@
 .verificacion-list li button:hover {
     background-color: #c82333;
 }
+/* Estilos para la lista de verificaciones */
+.verificacion-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.verificacion-list li {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px; /* Espaciado entre los elementos */
+}
+
+/* Estilos para los botones dentro de los elementos de la lista */
+.verificacion-list button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px; /* Espaciado entre los botones */
+}
+
+.verificacion-list button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los botones */
+.verificacion-form .btn-update {
+    background-color: #007bff; /* Color de fondo verde para el botón de actualizar */
+    color: white; /* Color del texto en blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Se comporta como un bloque en línea */
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 10px 5px; /* Margen alrededor del botón */
+    cursor: pointer; /* Cursor en forma de mano al pasar por encima */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+.verificacion-form .btn-update:hover {
+    background-color: #0056b3; /* Color de fondo verde más oscuro al pasar el mouse */
+}
+
+.verificacion-form .btn-cancel {
+    background-color: #dc3545; /* Color de fondo rojo para el botón de cancelar */
+    color: white; /* Color del texto en blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Se comporta como un bloque en línea */
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 10px 5px; /* Margen alrededor del botón */
+    cursor: pointer; /* Cursor en forma de mano al pasar por encima */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+.verificacion-form .btn-cancel:hover {
+    background-color: #c82333; /* Color de fondo rojo más oscuro al pasar el mouse */
+}
+
