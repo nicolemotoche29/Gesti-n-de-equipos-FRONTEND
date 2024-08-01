@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../Administrador/nav.css';
+import documento from '../../assets/images/documento.png';
 
 const NavUser = () => {
     const token = localStorage.getItem('token');
@@ -10,6 +12,9 @@ const NavUser = () => {
 
     return (
         <nav className="navbar">
+            <div className="navbar-brand">
+                <Link to="/" className="brand-logo">INICIO</Link>
+            </div>
             <ul className="navbar-nav">
                 {isAuthenticated && (
                     <>
@@ -25,6 +30,7 @@ const NavUser = () => {
                         <li className="nav-item">
                             <Link to="/usuario/verificacion" className="nav-link">Verificacion</Link>
                         </li>
+                        <img src={documento} alt="Descripción de la imagen" className="footer-image" />
                     </>
                 )}
             </ul>
