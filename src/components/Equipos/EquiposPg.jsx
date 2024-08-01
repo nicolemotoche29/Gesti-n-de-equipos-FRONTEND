@@ -270,6 +270,7 @@ const EquiposPg = () => {
                 </div>
             </form>
 
+            <h2>Actualizar Equipos</h2>
             {/* Formulario para actualizar un equipo */}
             {mostrarFormularioActualizar && (
                 <form className="equipos-form" onSubmit={actualizarEquipo}>
