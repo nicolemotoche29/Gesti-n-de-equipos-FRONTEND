@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Mensaje from "../Alerta/Mensaje";
+import './crearU.css';
 
 const CrearUsuario = () => {
     const [mensaje, setMensaje] = useState({});
